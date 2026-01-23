@@ -20,17 +20,17 @@ const Header = () => {
   return (
     <header className="bg-background sticky top-0 z-50 shadow-sm">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
-              <TreePine className="w-6 h-6 text-primary-foreground" />
+            <div className="w-8 h-8 sm:w-10 sm:h-10 bg-primary rounded-full flex items-center justify-center shadow-md">
+              <TreePine className="w-5 h-5 sm:w-6 sm:h-6 text-primary-foreground" />
             </div>
-            <span className="text-xl font-bold text-foreground">CARAMURI</span>
+            <span className="text-lg sm:text-xl font-bold text-foreground">CARAMURI</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-6">
+          <nav className="hidden xl:flex items-center gap-4 2xl:gap-6">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -43,19 +43,33 @@ const Header = () => {
           </nav>
 
           {/* Action Buttons */}
-          <div className="hidden lg:flex items-center gap-3">
-            <Button variant="default" className="bg-primary hover:bg-forest-dark">
+          <div className="hidden xl:flex items-center gap-2">
+            <Button 
+              variant="default" 
+              size="sm"
+              className="bg-primary hover:bg-forest-dark rounded-full px-4 shadow-md hover:shadow-lg transition-all"
+            >
               Seja Voluntário
             </Button>
-            <Button variant="outline" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground">
+            <Button 
+              variant="outline" 
+              size="sm"
+              className="border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground rounded-full px-4 transition-all"
+            >
               Doar
             </Button>
-            <Button variant="outline">Login</Button>
+            <Button 
+              variant="outline" 
+              size="sm"
+              className="rounded-full px-4"
+            >
+              Login
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2"
+            className="xl:hidden p-2 rounded-full hover:bg-muted transition-colors"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -64,26 +78,26 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-border animate-fade-in">
-            <nav className="flex flex-col gap-4">
+          <div className="xl:hidden py-4 border-t border-border animate-fade-in">
+            <nav className="flex flex-col gap-3">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={isActive(link.path) ? "nav-link-active" : "nav-link"}
+                  className={`py-2 px-4 rounded-xl transition-colors ${isActive(link.path) ? "nav-link-active bg-secondary" : "nav-link hover:bg-muted"}`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {link.label}
                 </Link>
               ))}
-              <div className="flex flex-col gap-2 mt-4">
-                <Button variant="default" className="bg-primary hover:bg-forest-dark w-full">
+              <div className="flex flex-col gap-2 mt-4 px-4">
+                <Button variant="default" className="bg-primary hover:bg-forest-dark w-full rounded-full">
                   Seja Voluntário
                 </Button>
-                <Button variant="outline" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground w-full">
+                <Button variant="outline" className="border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground w-full rounded-full">
                   Doar
                 </Button>
-                <Button variant="outline" className="w-full">Login</Button>
+                <Button variant="outline" className="w-full rounded-full">Login</Button>
               </div>
             </nav>
           </div>
