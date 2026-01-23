@@ -2,95 +2,98 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 210 11% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 210 11% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 210 11% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 145 63% 42%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 145 45% 95%;
+    --secondary-foreground: 145 63% 32%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 28 87% 55%;
+    --accent-foreground: 0 0% 100%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 16% 47%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 145 63% 42%;
 
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
+    --sidebar-foreground: 240 5% 26%;
+    --sidebar-primary: 145 63% 42%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 145 45% 95%;
+    --sidebar-accent-foreground: 145 63% 32%;
     --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 145 63% 42%;
 
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Custom tokens */
+    --forest: 145 63% 42%;
+    --forest-dark: 145 63% 32%;
+    --forest-light: 145 45% 95%;
+    --orange: 28 87% 55%;
+    --orange-dark: 28 87% 45%;
+    --orange-light: 28 87% 95%;
+    --gray-warm: 30 10% 96%;
+    --text-dark: 210 11% 15%;
+    --text-muted: 215 16% 47%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 210 11% 15%;
+    --foreground: 0 0% 98%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 210 11% 18%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 210 11% 18%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 145 63% 50%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 145 30% 20%;
+    --secondary-foreground: 145 63% 80%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 28 87% 55%;
+    --accent-foreground: 0 0% 100%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --muted: 210 20% 25%;
+    --muted-foreground: 215 20% 65%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --border: 210 20% 25%;
+    --input: 210 20% 25%;
+    --ring: 145 63% 50%;
+
+    --sidebar-background: 210 11% 12%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 145 63% 50%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 145 30% 20%;
+    --sidebar-accent-foreground: 145 63% 80%;
+    --sidebar-border: 210 20% 25%;
+    --sidebar-ring: 145 63% 50%;
   }
 }
 
@@ -100,6 +103,140 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+@layer components {
+  .hero-overlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.3) 0%,
+      rgba(0, 0, 0, 0.5) 100%
+    );
+  }
+
+  .hero-title {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold text-white text-center;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    font-style: italic;
+  }
+
+  .hero-subtitle {
+    @apply text-lg md:text-xl text-white text-center max-w-3xl mx-auto;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .section-title {
+    @apply text-2xl md:text-3xl font-bold text-foreground text-center;
+  }
+
+  .section-subtitle {
+    @apply text-muted-foreground text-center max-w-2xl mx-auto;
+  }
+
+  .card-category {
+    @apply text-sm font-medium uppercase tracking-wide;
+  }
+
+  .card-category-agriculture {
+    @apply text-primary;
+  }
+
+  .card-category-entrepreneurship {
+    @apply text-accent;
+  }
+
+  .card-category-leisure {
+    @apply text-blue-500;
+  }
+
+  .stat-value {
+    @apply text-4xl md:text-5xl font-bold text-primary;
+  }
+
+  .stat-label {
+    @apply text-muted-foreground text-center;
+  }
+
+  .nav-link {
+    @apply text-foreground hover:text-primary transition-colors font-medium text-sm;
+  }
+
+  .nav-link-active {
+    @apply text-primary font-medium text-sm;
+  }
+
+  .footer-section {
+    @apply bg-foreground text-white py-16;
+  }
+
+  .footer-title {
+    @apply text-lg font-semibold mb-4;
+  }
+
+  .footer-link {
+    @apply text-gray-400 hover:text-white transition-colors text-sm;
+  }
+
+  .value-card {
+    @apply bg-secondary rounded-lg p-8 text-center hover:shadow-lg transition-shadow;
+  }
+
+  .value-icon {
+    @apply w-16 h-16 mx-auto mb-4;
+  }
+
+  .project-card {
+    @apply bg-card rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow;
+  }
+
+  .project-card-image {
+    @apply w-full h-48 object-cover;
+  }
+
+  .project-card-content {
+    @apply p-6;
+  }
+
+  .contact-input {
+    @apply w-full border-b border-border bg-transparent py-3 focus:outline-none focus:border-primary transition-colors;
+  }
+
+  .social-float {
+    @apply fixed right-4 top-1/2 transform -translate-y-1/2 flex flex-col gap-2 z-50;
+  }
+
+  .social-button {
+    @apply w-10 h-10 rounded-full flex items-center justify-center text-white transition-transform hover:scale-110;
+  }
+
+  .transparency-stat {
+    @apply bg-card border border-border rounded-lg p-6;
+  }
+
+  .transparency-value {
+    @apply text-3xl md:text-4xl font-bold text-primary;
+  }
+
+  .team-member {
+    @apply text-center;
+  }
+
+  .team-avatar {
+    @apply w-24 h-24 rounded-full border-4 border-primary mx-auto mb-3 object-cover;
+  }
+
+  .team-name {
+    @apply font-semibold text-foreground;
+  }
+
+  .team-role {
+    @apply text-sm text-muted-foreground;
   }
 }
