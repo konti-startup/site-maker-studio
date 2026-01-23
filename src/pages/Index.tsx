@@ -1,17 +1,37 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SocialFloat from "@/components/SocialFloat";
-import HeroSection from "@/components/HeroSection";
+import HeroCarousel from "@/components/HeroCarousel";
 import ProjectCard from "@/components/ProjectCard";
 import StatCard from "@/components/StatCard";
 import { TreePine, Users, Droplets } from "lucide-react";
 
 import heroHome from "@/assets/hero-home.jpg";
+import heroSunset from "@/assets/hero-sunset.jpg";
 import agriculture from "@/assets/agriculture.jpg";
 import entrepreneurship from "@/assets/entrepreneurship.jpg";
 import fishing from "@/assets/fishing.jpg";
+import sustainable from "@/assets/sustainable.jpg";
 
 const Index = () => {
+  const heroSlides = [
+    {
+      image: heroHome,
+      title: "Comunidade São Francisco do Caramuri",
+      subtitle: "Conecte-se com Caramuri e viva um momento único! Curta a pesca esportiva, viva a experiência do turismo rural, aproveite o lazer em meio à natureza e saboreie o melhor abacaxi e pitaya regional.",
+    },
+    {
+      image: heroSunset,
+      title: "Preservando a Amazônia",
+      subtitle: "Trabalhamos lado a lado com comunidades locais para proteger a sociobiodiversidade amazônica e promover o desenvolvimento sustentável.",
+    },
+    {
+      image: sustainable,
+      title: "Turismo Sustentável",
+      subtitle: "Descubra as belezas naturais da região através do ecoturismo responsável e viva experiências inesquecíveis.",
+    },
+  ];
+
   const projects = [
     {
       image: agriculture,
@@ -35,7 +55,7 @@ const Index = () => {
       categoryColor: "blue" as const,
       title: "Pesca Esportiva",
       date: "24 de Março 2024",
-      description: "A Pesca Esportiva Comunitária em São Francisco do Caramuri ganhou destaque em 2019, fazendo parte das atividades da economia criativa e do turismo de base rural.",
+      description: "A Pesca Esportiva Comunitária em São Francisco do Caramuri ganhou destaque em 2019, fazendo parte das atividades da economia criativa.",
     },
   ];
 
@@ -44,26 +64,24 @@ const Index = () => {
       <Header />
       <SocialFloat />
 
-      {/* Hero Section */}
-      <HeroSection
-        image={heroHome}
-        title="Comunidade São Francisco do Caramuri"
-        subtitle="Conecte-se com Caramuri e viva um momento único! Curta a pesca esportiva, viva a experiência do turismo rural, aproveite o lazer em meio à natureza e saboreie o melhor abacaxi e pitaya regional."
+      {/* Hero Carousel */}
+      <HeroCarousel
+        slides={heroSlides}
         showButton
         buttonText="Saber Mais"
       />
 
       {/* Projects Section */}
-      <section className="py-20 bg-background">
+      <section className="py-12 sm:py-16 md:py-20 bg-background">
         <div className="container mx-auto px-4">
-          <h2 className="section-title mb-4">
+          <h2 className="section-title mb-3 sm:mb-4">
             <span className="lowercase">projeto</span>S DA COMUNIDADE
           </h2>
-          <p className="section-subtitle mb-12">
+          <p className="section-subtitle mb-8 sm:mb-12">
             Conheça as iniciativas que estão transformando nossa comunidade.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {projects.map((project, index) => (
               <ProjectCard key={index} {...project} />
             ))}
@@ -72,21 +90,21 @@ const Index = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-muted">
+      <section className="py-12 sm:py-16 bg-muted">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             <StatCard
-              icon={<TreePine className="w-12 h-12" />}
+              icon={<TreePine className="w-10 h-10 sm:w-12 sm:h-12" />}
               value="6 Mil"
               label="Hectares Preservados"
             />
             <StatCard
-              icon={<Users className="w-12 h-12" />}
+              icon={<Users className="w-10 h-10 sm:w-12 sm:h-12" />}
               value="300"
               label="Pessoas Beneficiadas"
             />
             <StatCard
-              icon={<Droplets className="w-12 h-12" />}
+              icon={<Droplets className="w-10 h-10 sm:w-12 sm:h-12" />}
               value="80%"
               label="Redução do Desmatamento"
             />

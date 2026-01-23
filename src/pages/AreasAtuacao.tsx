@@ -17,42 +17,42 @@ const AreasAtuacao = () => {
   const programs = [
     {
       image: agriculture,
-      icon: <BookOpen className="w-6 h-6" />,
+      icon: <BookOpen className="w-5 h-5 sm:w-6 sm:h-6" />,
       iconColor: "text-primary",
       title: "Programa Caramuri Agrícola",
       description: "O Programa Caramuri Agrícola apoia a agricultura familiar com práticas sustentáveis, geração de renda e respeito à cultura e ao meio ambiente amazônico.",
     },
     {
       image: sustainable,
-      icon: <Leaf className="w-6 h-6" />,
+      icon: <Leaf className="w-5 h-5 sm:w-6 sm:h-6" />,
       iconColor: "text-primary",
       title: "Programa Caramuri Sustentável",
       description: "Integra pesca esportiva, turismo rural e conservação ambiental para fortalecer a economia local de forma sustentável.",
     },
     {
       image: training,
-      icon: <Heart className="w-6 h-6" />,
+      icon: <Heart className="w-5 h-5 sm:w-6 sm:h-6" />,
       iconColor: "text-accent",
       title: "Programa Caramuri + Capacitado",
       description: "Promove capacitação técnica e profissional para geração de renda e autonomia comunitária.",
     },
     {
       image: fishing,
-      icon: <Fish className="w-6 h-6" />,
+      icon: <Fish className="w-5 h-5 sm:w-6 sm:h-6" />,
       iconColor: "text-blue-500",
       title: "Pesca Esportiva Comunitária",
       description: "Turismo sustentável através da pesca esportiva, gerando renda e preservando os recursos naturais.",
     },
     {
       image: entrepreneurship,
-      icon: <Users className="w-6 h-6" />,
+      icon: <Users className="w-5 h-5 sm:w-6 sm:h-6" />,
       iconColor: "text-accent",
       title: "Empreendedorismo Rural",
       description: "Apoio ao empreendedorismo local com foco em produtos regionais e artesanato tradicional.",
     },
     {
       image: communityGroup,
-      icon: <TreePine className="w-6 h-6" />,
+      icon: <TreePine className="w-5 h-5 sm:w-6 sm:h-6" />,
       iconColor: "text-primary",
       title: "Preservação Ambiental",
       description: "Projetos de reflorestamento e educação ambiental para proteger a biodiversidade amazônica.",
@@ -71,9 +71,9 @@ const AreasAtuacao = () => {
       />
 
       {/* Programs Grid */}
-      <section className="py-20 bg-background">
+      <section className="py-12 sm:py-16 md:py-20 bg-background">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             {programs.map((program, index) => (
               <ProgramCard key={index} {...program} />
             ))}

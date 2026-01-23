@@ -34,7 +34,7 @@
     --input: 214 32% 91%;
     --ring: 145 63% 42%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5% 26%;
@@ -112,36 +112,50 @@
   }
 }
 
+/* Embla Carousel Styles */
+.embla {
+  overflow: hidden;
+}
+
+.embla__container {
+  display: flex;
+}
+
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
 @layer components {
   .hero-overlay {
     background: linear-gradient(
       to bottom,
-      rgba(0, 0, 0, 0.3) 0%,
-      rgba(0, 0, 0, 0.5) 100%
+      rgba(0, 0, 0, 0.25) 0%,
+      rgba(0, 0, 0, 0.55) 100%
     );
   }
 
   .hero-title {
-    @apply text-4xl md:text-5xl lg:text-6xl font-bold text-white text-center;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground text-center leading-tight;
+    text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.6);
     font-style: italic;
   }
 
   .hero-subtitle {
-    @apply text-lg md:text-xl text-white text-center max-w-3xl mx-auto;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    @apply text-base sm:text-lg md:text-xl text-primary-foreground text-center max-w-3xl mx-auto leading-relaxed;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
   }
 
   .section-title {
-    @apply text-2xl md:text-3xl font-bold text-foreground text-center;
+    @apply text-xl sm:text-2xl md:text-3xl font-bold text-foreground text-center;
   }
 
   .section-subtitle {
-    @apply text-muted-foreground text-center max-w-2xl mx-auto;
+    @apply text-sm sm:text-base text-muted-foreground text-center max-w-2xl mx-auto;
   }
 
   .card-category {
-    @apply text-sm font-medium uppercase tracking-wide;
+    @apply text-xs sm:text-sm font-semibold uppercase tracking-wider;
   }
 
   .card-category-agriculture {
@@ -157,71 +171,71 @@
   }
 
   .stat-value {
-    @apply text-4xl md:text-5xl font-bold text-primary;
+    @apply text-3xl sm:text-4xl md:text-5xl font-bold text-primary;
   }
 
   .stat-label {
-    @apply text-muted-foreground text-center;
+    @apply text-sm sm:text-base text-muted-foreground text-center;
   }
 
   .nav-link {
-    @apply text-foreground hover:text-primary transition-colors font-medium text-sm;
+    @apply text-foreground hover:text-primary transition-colors font-medium text-xs sm:text-sm;
   }
 
   .nav-link-active {
-    @apply text-primary font-medium text-sm;
+    @apply text-primary font-semibold text-xs sm:text-sm;
   }
 
   .footer-section {
-    @apply bg-foreground text-white py-16;
+    @apply bg-foreground text-primary-foreground py-12 sm:py-16;
   }
 
   .footer-title {
-    @apply text-lg font-semibold mb-4;
+    @apply text-base sm:text-lg font-semibold mb-3 sm:mb-4;
   }
 
   .footer-link {
-    @apply text-gray-400 hover:text-white transition-colors text-sm;
+    @apply text-muted-foreground hover:text-primary-foreground transition-colors text-sm;
   }
 
   .value-card {
-    @apply bg-secondary rounded-lg p-8 text-center hover:shadow-lg transition-shadow;
+    @apply bg-secondary rounded-2xl p-6 sm:p-8 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1;
   }
 
   .value-icon {
-    @apply w-16 h-16 mx-auto mb-4;
+    @apply w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4;
   }
 
   .project-card {
-    @apply bg-card rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow;
+    @apply bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2;
   }
 
   .project-card-image {
-    @apply w-full h-48 object-cover;
+    @apply w-full h-40 sm:h-48 object-cover;
   }
 
   .project-card-content {
-    @apply p-6;
+    @apply p-4 sm:p-6;
   }
 
   .contact-input {
-    @apply w-full border-b border-border bg-transparent py-3 focus:outline-none focus:border-primary transition-colors;
+    @apply w-full border-b-2 border-border bg-transparent py-3 focus:outline-none focus:border-primary transition-colors text-sm sm:text-base;
   }
 
   .social-float {
-    @apply fixed right-4 top-1/2 transform -translate-y-1/2 flex flex-col gap-2 z-50;
+    @apply fixed right-3 sm:right-4 top-1/2 transform -translate-y-1/2 flex flex-col gap-2 z-50;
   }
 
   .social-button {
-    @apply w-10 h-10 rounded-full flex items-center justify-center text-white transition-transform hover:scale-110;
+    @apply w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-primary-foreground transition-all duration-300 hover:scale-110 shadow-lg;
   }
 
   .transparency-stat {
-    @apply bg-card border border-border rounded-lg p-6;
+    @apply bg-card border border-border rounded-2xl p-4 sm:p-6 hover:shadow-lg transition-all duration-300;
   }
 
   .transparency-value {
-    @apply text-3xl md:text-4xl font-bold text-primary;
+    @apply text-2xl sm:text-3xl md:text-4xl font-bold text-primary;
   }
 
   .team-member {
@@ -229,14 +243,35 @@
   }
 
   .team-avatar {
-    @apply w-24 h-24 rounded-full border-4 border-primary mx-auto mb-3 object-cover;
+    @apply w-20 h-20 sm:w-24 sm:h-24 rounded-full border-4 border-primary mx-auto mb-2 sm:mb-3 object-cover shadow-lg;
   }
 
   .team-name {
-    @apply font-semibold text-foreground;
+    @apply font-semibold text-foreground text-sm sm:text-base;
   }
 
   .team-role {
-    @apply text-sm text-muted-foreground;
+    @apply text-xs sm:text-sm text-muted-foreground;
+  }
+
+  /* Smooth animations */
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out forwards;
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Glass effect for cards */
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-sm;
   }
 }
