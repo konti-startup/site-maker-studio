@@ -6,27 +6,23 @@ import ProjectCard from "@/components/ProjectCard";
 import StatCard from "@/components/StatCard";
 import { TreePine, Users, Droplets } from "lucide-react";
 
-import heroHome from "@/assets/hero-home.jpg";
-import heroSunset from "@/assets/hero-sunset.jpg";
-import agriculture from "@/assets/agriculture.jpg";
-import entrepreneurship from "@/assets/entrepreneurship.jpg";
-import fishing from "@/assets/fishing.jpg";
-import sustainable from "@/assets/sustainable.jpg";
+const CARROSEL = "/carrosel";
+const PROJETOS_IMG = "/3%20imagens";
 
 const Index = () => {
   const heroSlides = [
     {
-      image: heroHome,
+      image: `${CARROSEL}/slide-1.jpg`,
       title: "Comunidade São Francisco do Caramuri",
       subtitle: "Conecte-se com Caramuri e viva um momento único! Curta a pesca esportiva, viva a experiência do turismo rural, aproveite o lazer em meio à natureza e saboreie o melhor abacaxi e pitaya regional.",
     },
     {
-      image: heroSunset,
+      image: `${CARROSEL}/slide-2.jpg`,
       title: "Preservando a Amazônia",
       subtitle: "Trabalhamos lado a lado com comunidades locais para proteger a sociobiodiversidade amazônica e promover o desenvolvimento sustentável.",
     },
     {
-      image: sustainable,
+      image: `${CARROSEL}/slide-3.jpg`,
       title: "Turismo Sustentável",
       subtitle: "Descubra as belezas naturais da região através do ecoturismo responsável e viva experiências inesquecíveis.",
     },
@@ -34,7 +30,7 @@ const Index = () => {
 
   const projects = [
     {
-      image: agriculture,
+      image: `${PROJETOS_IMG}/agricultura.jpg`,
       category: "Agricultura",
       categoryColor: "green" as const,
       title: "Agricultura Familiar",
@@ -42,7 +38,7 @@ const Index = () => {
       description: "Conheça um pouco mais sobre o Programa Caramuri Agrícola Sustentável na Comunidade São Francisco do Caramuri.",
     },
     {
-      image: entrepreneurship,
+      image: `${PROJETOS_IMG}/empreendedorismo.jpg`,
       category: "Empreendedorismo",
       categoryColor: "orange" as const,
       title: "Inclusão produtiva",
@@ -50,7 +46,7 @@ const Index = () => {
       description: "Veja o que é o empreendedorismo rural na Comunidade por meio do Programa Caramuri + Capacitado.",
     },
     {
-      image: fishing,
+      image: `${PROJETOS_IMG}/pesca.jpg`,
       category: "Lazer",
       categoryColor: "blue" as const,
       title: "Pesca Esportiva",
@@ -74,8 +70,8 @@ const Index = () => {
       {/* Projects Section */}
       <section className="py-12 sm:py-16 md:py-20 bg-background">
         <div className="container mx-auto px-4">
-          <h2 className="section-title mb-3 sm:mb-4">
-            <span className="lowercase">projeto</span>S DA COMUNIDADE
+          <h2 className="section-title mb-3 sm:mb-4 uppercase tracking-[0.12em] sm:tracking-[0.18em]">
+            PROJETOS DA COMUNIDADE
           </h2>
           <p className="section-subtitle mb-8 sm:mb-12">
             Conheça as iniciativas que estão transformando nossa comunidade.

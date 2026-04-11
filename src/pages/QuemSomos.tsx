@@ -6,8 +6,8 @@ import ValueCard from "@/components/ValueCard";
 import TeamMember from "@/components/TeamMember";
 import { TreePine, Users, Heart } from "lucide-react";
 
-import heroSunset from "@/assets/hero-sunset.jpg";
-import communityGroup from "@/assets/community-group.jpg";
+const QUEM_SOMOS_IMG = "/quem-somos";
+const D = "/diretoria";
 
 const QuemSomos = () => {
   const values = [
@@ -57,7 +57,7 @@ const QuemSomos = () => {
 
       {/* Hero Section */}
       <HeroSection
-        image={heroSunset}
+        image={`${QUEM_SOMOS_IMG}/hero.jpg`}
         title="Caramuri Sustentável"
       />
 
@@ -84,7 +84,7 @@ const QuemSomos = () => {
             </div>
             <div>
               <img
-                src={communityGroup}
+                src={`${QUEM_SOMOS_IMG}/comunidade.jpg`}
                 alt="Comunidade Caramuri"
                 className="rounded-2xl shadow-xl w-full"
               />
@@ -113,7 +113,7 @@ const QuemSomos = () => {
           {/* President */}
           <div className="flex flex-col items-center mb-6 sm:mb-8">
             <TeamMember
-              image="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face"
+              image={`${D}/presidente.jpg`}
               name={teamMembers.president.name}
               role={teamMembers.president.role}
               size="large"
@@ -126,7 +126,7 @@ const QuemSomos = () => {
             {teamMembers.vicePresidents.map((member, index) => (
               <TeamMember
                 key={index}
-                image={`https://images.unsplash.com/photo-${1494790108377 + index}-be9c29b29330?w=200&h=200&fit=crop&crop=face`}
+                image={`${D}/vice-${index + 1}.jpg`}
                 name={member.name}
                 role={member.role}
                 size="medium"
@@ -139,7 +139,7 @@ const QuemSomos = () => {
             {teamMembers.treasurers.map((member, index) => (
               <TeamMember
                 key={index}
-                image={`https://images.unsplash.com/photo-${1438761681033 + index}-6461ffad8d80?w=200&h=200&fit=crop&crop=face`}
+                image={`${D}/tesoureira-${index + 1}.jpg`}
                 name={member.name}
                 role={member.role}
                 size="medium"
@@ -152,7 +152,7 @@ const QuemSomos = () => {
             {teamMembers.council.map((member, index) => (
               <TeamMember
                 key={index}
-                image={`https://images.unsplash.com/photo-${1534528741775 + index}-53994a69daeb?w=200&h=200&fit=crop&crop=face`}
+                image={`${D}/${index < 2 ? "conselheira" : "suplente"}-${(index % 2) + 1}.jpg`}
                 name={member.name}
                 role={member.role}
                 size="small"

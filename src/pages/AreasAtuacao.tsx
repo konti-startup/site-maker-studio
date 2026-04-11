@@ -5,53 +5,47 @@ import HeroSection from "@/components/HeroSection";
 import ProgramCard from "@/components/ProgramCard";
 import { BookOpen, Leaf, Heart, TreePine, Fish, Users } from "lucide-react";
 
-import heroSunset from "@/assets/hero-sunset.jpg";
-import agriculture from "@/assets/agriculture.jpg";
-import sustainable from "@/assets/sustainable.jpg";
-import training from "@/assets/training.jpg";
-import fishing from "@/assets/fishing.jpg";
-import entrepreneurship from "@/assets/entrepreneurship.jpg";
-import communityGroup from "@/assets/community-group.jpg";
+const NOSSOS_PROJETOS = "/nossos-projetos";
 
 const AreasAtuacao = () => {
   const programs = [
     {
-      image: agriculture,
+      image: `${NOSSOS_PROJETOS}/programa-agricola.jpg`,
       icon: <BookOpen className="w-5 h-5 sm:w-6 sm:h-6" />,
       iconColor: "text-primary",
       title: "Programa Caramuri Agrícola",
       description: "O Programa Caramuri Agrícola apoia a agricultura familiar com práticas sustentáveis, geração de renda e respeito à cultura e ao meio ambiente amazônico.",
     },
     {
-      image: sustainable,
+      image: `${NOSSOS_PROJETOS}/programa-sustentavel.jpg`,
       icon: <Leaf className="w-5 h-5 sm:w-6 sm:h-6" />,
       iconColor: "text-primary",
       title: "Programa Caramuri Sustentável",
       description: "Integra pesca esportiva, turismo rural e conservação ambiental para fortalecer a economia local de forma sustentável.",
     },
     {
-      image: training,
+      image: `${NOSSOS_PROJETOS}/programa-capacitado.jpg`,
       icon: <Heart className="w-5 h-5 sm:w-6 sm:h-6" />,
       iconColor: "text-accent",
       title: "Programa Caramuri + Capacitado",
       description: "Promove capacitação técnica e profissional para geração de renda e autonomia comunitária.",
     },
     {
-      image: fishing,
+      image: `${NOSSOS_PROJETOS}/pesca-esportiva.jpg`,
       icon: <Fish className="w-5 h-5 sm:w-6 sm:h-6" />,
       iconColor: "text-blue-500",
       title: "Pesca Esportiva Comunitária",
       description: "Turismo sustentável através da pesca esportiva, gerando renda e preservando os recursos naturais.",
     },
     {
-      image: entrepreneurship,
+      image: `${NOSSOS_PROJETOS}/empreendedorismo-rural.jpg`,
       icon: <Users className="w-5 h-5 sm:w-6 sm:h-6" />,
       iconColor: "text-accent",
       title: "Empreendedorismo Rural",
       description: "Apoio ao empreendedorismo local com foco em produtos regionais e artesanato tradicional.",
     },
     {
-      image: communityGroup,
+      image: `${NOSSOS_PROJETOS}/preservacao-ambiental.jpg`,
       icon: <TreePine className="w-5 h-5 sm:w-6 sm:h-6" />,
       iconColor: "text-primary",
       title: "Preservação Ambiental",
@@ -66,7 +60,7 @@ const AreasAtuacao = () => {
 
       {/* Hero Section */}
       <HeroSection
-        image={heroSunset}
+        image={`${NOSSOS_PROJETOS}/hero.jpg`}
         title="Nossos projetos"
       />
 

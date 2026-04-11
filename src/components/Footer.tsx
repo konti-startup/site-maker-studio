@@ -63,6 +63,11 @@ const Footer = () => {
                   Áreas de Atuação
                 </Link>
               </li>
+              <li>
+                <Link to="/certificados" className="footer-link">
+                  Certificados
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -82,6 +87,24 @@ const Footer = () => {
                 <Send className="w-4 h-4" />
               </Button>
             </div>
+          </div>
+        </div>
+
+        <div className="border-t border-muted-foreground/20 pt-6 sm:pt-8">
+          <p className="text-center text-muted-foreground text-xs sm:text-sm mb-4">
+            Parceiros
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
+            <img
+              src="/parceiros/konti.png"
+              alt="Logo da Konti"
+              className="h-12 sm:h-16 w-auto object-contain bg-white rounded-md p-1"
+            />
+            <img
+              src="/parceiros/ltd.png"
+              alt="Logo do LTD"
+              className="h-12 sm:h-16 w-auto object-contain bg-white rounded-md p-1"
+            />
           </div>
         </div>
 
