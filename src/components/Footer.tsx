@@ -10,7 +10,14 @@ const Footer = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8 sm:mb-12">
           {/* About */}
           <div className="text-center sm:text-left">
-            <h3 className="footer-title">CARAMURI</h3>
+            <div className="flex items-center justify-center sm:justify-start gap-2 mb-2">
+              <img
+                src="/logo/logo.jpeg"
+                alt=""
+                className="h-10 w-10 object-contain rounded-md shrink-0"
+              />
+              <h3 className="footer-title mb-0">CARAMURI</h3>
+            </div>
             <p className="text-muted-foreground text-sm mb-4">
               Caramuri Sustentável na Amazônia
             </p>
@@ -112,6 +119,17 @@ const Footer = () => {
         <div className="border-t border-muted-foreground/20 pt-6 sm:pt-8 text-center">
           <p className="text-muted-foreground text-xs sm:text-sm">
             © 2026 © 2025 Fundação CAMURI. Todos os direitos reservados.
+          </p>
+          <p className="mt-2 text-muted-foreground text-xs sm:text-sm">
+            Desenvolvido por{' '}
+            <a
+              href="https://konti-nine.vercel.app/"
+              target="_blank"
+              rel="noreferrer"
+              className="text-primary-foreground hover:text-accent underline underline-offset-4 transition-colors"
+            >
+              @Konti
+            </a>
           </p>
         </div>
       </div>

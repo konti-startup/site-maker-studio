@@ -1,4 +1,4 @@
-# Welcome to your Lovable project
+# CARAMURI — site institucional
 
 ## Project info
 

@@ -2,9 +2,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SocialFloat from "@/components/SocialFloat";
 import HeroSection from "@/components/HeroSection";
-import { PieChart, Shield, Check } from "lucide-react";
-
-import heroSunset from "@/assets/hero-sunset.jpg";
+import { PieChart, Shield, Check, FileText, FolderOpen } from "lucide-react";
+import { HERO_PAGE_IMAGE } from "@/lib/hero-image";
 
 const Transparencia = () => {
   const stats = [
@@ -21,10 +20,11 @@ const Transparencia = () => {
   ];
 
   const governance = [
-    "Conselho Diretor",
-    "Conselho Fiscal",
-    "Comitê de Ética",
-    "Auditoria Externa Independente",
+   "Diretoria Executiva",
+   "Conselho Fiscal",
+   "Conselho Técnico",
+   "Secretaria Executiva",
+   "Comitê Gestor de Patrimônio"
   ];
 
   return (
@@ -34,7 +34,7 @@ const Transparencia = () => {
 
       {/* Hero Section */}
       <HeroSection
-        image={heroSunset}
+        image={HERO_PAGE_IMAGE}
         title="Transparência"
       />
 
@@ -104,6 +104,81 @@ const Transparencia = () => {
                   </div>
                 ))}
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* === NOVA SEÇÃO: Documentos e Relatórios === */}
+      <section className="py-12 sm:py-16 md:py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <h2 className="section-title mb-3 sm:mb-4">Documentos e Relatórios</h2>
+          <p className="section-subtitle mb-10 sm:mb-12">
+            Acesse nossos documentos oficiais, relatórios anuais e balanços patrimoniais.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {/* Estatuto Social */}
+            <div className="bg-card rounded-2xl p-6 sm:p-8 shadow-lg flex flex-col">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center">
+                  <FileText className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold text-foreground">Estatuto Social</h3>
+              </div>
+              <p className="text-muted-foreground mb-8 flex-1">
+                Documento que estabelece as normas e diretrizes da associação
+              </p>
+              <a
+                href="https://drive.google.com/file/d/17yN6WzWTREtl-AgsKHufXr5Id95NGK6s/view"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center w-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors font-medium py-3 px-6 rounded-xl"
+              >
+                Acessar Documento
+              </a>
+            </div>
+
+            {/* Relatórios Anuais */}
+            <div className="bg-card rounded-2xl p-6 sm:p-8 shadow-lg flex flex-col">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center">
+                  <FolderOpen className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold text-foreground">Relatórios Anuais</h3>
+              </div>
+              <p className="text-muted-foreground mb-8 flex-1">
+                Acesse nossos relatórios anuais de atividades
+              </p>
+              <a
+                href="https://drive.google.com/drive/folders/1AubVwfL0ulgz6In9cq_sS0K1cQGyMtXJ?usp=drive_link"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center w-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors font-medium py-3 px-6 rounded-xl"
+              >
+                Acessar Pasta
+              </a>
+            </div>
+
+            {/* Balanços Patrimoniais */}
+            <div className="bg-card rounded-2xl p-6 sm:p-8 shadow-lg flex flex-col">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center">
+                  <FolderOpen className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold text-foreground">Balanços Patrimoniais</h3>
+              </div>
+              <p className="text-muted-foreground mb-8 flex-1">
+                Acesse nossos balanços patrimoniais por ano
+              </p>
+              <a
+                href="https://drive.google.com/drive/folders/1Gq6aHCRPbqyz-qcRgYq5S08S86l0zA_y?usp=drive_link"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center w-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors font-medium py-3 px-6 rounded-xl"
+              >
+                Acessar Pasta
+              </a>
             </div>
           </div>
         </div>
